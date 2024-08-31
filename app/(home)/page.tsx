@@ -13,12 +13,21 @@ export async function getMovies() {
   return json;
 };
 
-export default async function Page() {
+export default async function HomePage() {
   const movies = await getMovies();
 
   return (
     <div>
-      {movies.map(movie => <li><Link key={movie.id} href={`/movies/${movie.id}`}>{movie.title}</Link></li>)}
+      {movies.map(movie => 
+        <li>
+          <Link 
+            key={movie.id} 
+            href={`/movies/${movie.id}`}
+          >
+            {movie.title}
+          </Link>
+        </li>
+      )}
     </div>
   );
 };
