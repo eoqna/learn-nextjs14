@@ -12,7 +12,7 @@ export async function generateMetadata({ params: { id } }: IParams) {
   return {
     title: movie.title,
   }
-}
+};
 
 export default async function MovieDetail({ params: { id } }: IParams) {
   return (
